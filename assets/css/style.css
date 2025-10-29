@@ -1,0 +1,1296 @@
+/* ====== BRAND FONTS (локальные) ====== */
+/* Файлы уже лежат в assets/fonts/ — подключаем как есть.
+   Если позже будут .woff2 — добавим их первой строчкой для перфоманса. */
+
+/* === Eastman-Black (900) === */
+@font-face{
+  font-family:'Eastman-Black';
+  src: url('../fonts/Eastman-Black.woff2') format('woff2'),
+       url('../fonts/Eastman-Black.woff')  format('woff'),
+       url('../fonts/Eastman-Black.ttf')   format('truetype');
+  font-weight:900;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:"Eastman Pack";
+  src:
+    url("../fonts/Eastman-Regular.ttf") format("truetype");
+  font-weight: 400;           /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family:"Eastman-Black";
+  src:
+    url("../fonts/Eastman-Black.ttf") format("truetype");
+  font-weight: 400;           /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family:"Zarubka Type";
+  src:
+    url("../fonts/zarubkaType-Regular.ttf") format("truetype");
+  font-weight: 400;           /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Системные алиасы — используем по всему проекту */
+:root{
+  
+  --font-text: "Eastman Pack", system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+  --font-display: "Zarubka Type", var(--font-text);
+}
+/* === Подключение шрифта Eastman-Black === */
+@font-face {
+  font-family: 'Eastman-Black';
+  src: url('assets/fonts/Eastman-Black.woff2') format('woff2'),
+       url('assets/fonts/Eastman-Black.woff') format('woff'),
+       url('assets/fonts/Eastman-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Применяем */
+body{ font-family: var(--font-text); }
+h1,h2,h3{ font-family: var(--font-display); letter-spacing:.3px; }
+
+
+/* ================================
+   БАЗА
+   ================================ */
+
+:root{
+  /* BRAND (из ТЗ) */
+  --c-olive:#2D381C;   /* основной бренд */
+  --c-gray:#4D4D4D;   
+  --c-gray1:#2d2d2d; /* нейтральный текст */
+  --c-sand:#E9E6DA;    /* фон/подложки */
+  --c-maroon:#800000;  /* акцент (действия/ссылки) */
+  --c-olive2:#5A6241;  /* вторичный бренд/бордеры */
+  --c-navy:#0D203B;    /* заголовки/контрастный текст */
+
+  /* Семантика (чтобы использовать по проекту) */
+  --bg:var(--c-sand);
+  --fg:var(--c-navy);
+  --muted:var(--c-gray);
+  --brand:var(--c-olive);
+  --brand-2:var(--c-olive2);
+  --accent:var(--c-maroon);
+}
+
+/* Системные алиасы */
+:root{
+  --font-text: "Eastman Pack", system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+  --font-display: "Zarubka Type", var(--font-text);
+}
+
+/* Применяем по умолчанию текстовый шрифт на всём сайте */
+body{ font-family: var(--font-text); }
+
+/* Заголовки — брендовый шрифт */
+h1,h2,h3{ font-family: var(--font-display); letter-spacing:.3px; }
+
+
+/* Базовые цвета страницы (можно переопределять Tailwind-классами при необходимости) */
+body{ background:var(--bg); color:var(--fg); }
+
+/* Универсальные кнопки под бренд */
+.btn-primary{
+  background:var(--brand);
+  color:#fff;
+  border-radius:9999px;
+  padding:.75rem 2rem;
+  font-weight:700;
+  transition:opacity .2s ease;
+}
+.btn-primary:hover{ opacity:.9; }
+
+.btn-outline{
+  background:transparent;
+  color:#fff;
+  border:3px solid #fff;
+  border-radius:9999px;
+  padding:.75rem 2rem;
+  font-weight:700;
+  transition:all .2s ease;
+}
+.btn-outline:hover{ background:#fff; color:#000; }
+
+/* Ссылки-акценты в тексте/документах */
+.link-accent{ color:var(--accent); }
+.link-accent:hover{ text-decoration:underline; }
+
+/* Футер/хедер, если нужны “брендовые” фоны */
+.bg-brand{ background:var(--brand); }
+.text-brand{ color:var(--brand); }
+.border-brand{ border-color:var(--brand); }
+
+
+/* Шрифт как на главной */
+.font-oswald {
+    font-family: 'Eastman Pack', sans-serif;
+}
+
+/* Утолщённая рамка для кнопок (используется на обложке) */
+.border-3 { border-width: 3px; }
+
+/* Общее поведение ссылок в шапке/футере */
+a { text-decoration: none; }
+a:hover { opacity: .9; }
+
+/* ================================
+   ХЕДЕР / НАВИГАЦИЯ
+   ================================ */
+
+/* Подсветка активного пункта меню (ставим класс .active в HTML у текущего раздела) */
+nav a.active {
+    color: #026d1a !important;
+    pointer-events: none;
+}
+
+/* Чтобы шапка не дёргалась по высоте, когда фон становится полупрозрачным на скролле */
+#main-nav { will-change: background-color; }
+
+/* ================================
+   БУРГЕР-МЕНЮ (кнопка)
+   (используется #mobile-menu-btn с классом .t-menuburger)
+   ================================ */
+
+.t-menuburger {
+    position: relative;
+    flex-shrink: 0;
+    width: 28px;
+    height: 20px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.t-menuburger span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    opacity: 1;
+    left: 0;
+    height: 3px;
+    background: #ffffff; /* цвет линий бургера по умолчанию */
+    transition: 0.25s ease-in-out;
+}
+
+/* Позиции полосок в закрытом состоянии */
+.t-menuburger span:nth-child(1) { top: 0px; }
+.t-menuburger span:nth-child(2),
+.t-menuburger span:nth-child(3) { top: 8px; }
+.t-menuburger span:nth-child(4) { top: 16px; }
+
+/* Открытое состояние */
+.t-menuburger.open span:nth-child(1) {
+    top: 8px; width: 0%; left: 50%;
+}
+.t-menuburger.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+.t-menuburger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+.t-menuburger.open span:nth-child(4) {
+    top: 8px; width: 0%; left: 50%;
+}
+
+
+
+/* Подправим изображения карточек новостей на всякий случай */
+.news-item img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ================================
+   СЛАЙДЕР "ДЕЙСТВУЮЩИЕ ПРОГРАММЫ"
+   (структура и ID/классы должны совпадать с HTML)
+   ================================ */
+
+.programs-section {
+    position: relative;         /* база для абсолютных стрелок */
+    overflow-x: hidden;         /* убираем горизонтальный скролл секции */
+}
+
+.programs-arrows-container {
+    z-index: 10;                /* стрелки над слайдами */
+}
+
+.programs-slider-container {
+    overflow-x: hidden;         /* видимое окно слайдера */
+    padding: 0;                 /* слайды занимают всю ширину */
+}
+
+.programs-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+/* Каждый слайд фиксированной ширины под число колонок */
+.program-slide {
+    box-sizing: content-box;
+    flex-shrink: 0;
+    padding: 1rem;              /* совпадает с p-4 в Tailwind, если используете */
+}
+
+/* Десктоп: 4 карточки */
+@media (min-width: 1024px) {
+    .program-slide { width: 25%; }  /* 100/4 */
+}
+
+/* Планшет: 2 карточки */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .program-slide { width: 50%; }  /* 100/2 */
+}
+
+/* Мобилы: 1 карточка */
+@media (max-width: 767px) {
+    .program-slide { width: 100%; } /* 100/1 */
+}
+
+/* Точки-индикаторы (контейнер с id="slider-dots", сами точки с классом .slider-dot) */
+#slider-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #cfcfcf;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color .3s ease, transform .2s ease;
+}
+.slider-dot:hover { transform: scale(1.08); }
+.slider-dot.active { background-color: #026d1a; }
+
+/* ================================
+   КОЛЛАЖ (если используете блок под галерею, как на главной)
+   ================================ */
+
+.tilda-collage-replica {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 16px;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.collage-item { position: relative; min-height: 240px; }
+.collage-bg-img {
+    position: relative;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+}
+.right-grid-container { display: grid; grid-template-rows: 1fr 1fr; gap: 16px; }
+.collage-row { display: grid; gap: 16px; }
+.top-row-split { grid-template-columns: 1fr 1fr; }
+.bottom-row-single { grid-template-columns: 1fr; }
+
+/* Адаптив для коллажа */
+@media (max-width: 1024px) {
+    .tilda-collage-replica {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================================
+   УТИЛИТЫ / МЕЛОЧИ
+   ================================ */
+
+/* Иконки соцсетей в шапке, немного сглаживания */
+.social-icon { display: inline-flex; line-height: 1; }
+.social-icon svg { display: block; }
+
+/* Изображения в карточках программ по высоте */
+.program-slide img {
+    width: 100%;
+    height: 12rem;            /* ~ h-48 */
+    object-fit: cover;
+    display: block;
+}
+
+/* Плавный скролл для всей страницы (если оставляете якоря внутри страницы) */
+html { scroll-behavior: smooth; }
+/* добавить в style.css (если ещё не добавлено) */
+.social-links .social-link { display:inline-flex; color:#fff; transition:transform .18s ease, color .18s ease; }
+.social-links .social-link:hover { transform: scale(1.15); }
+.social-links .social-icon { width:22px; height:22px; display:block; }
+.social-links .social-link[data-brand="tg"]:hover   { color:#29a9eb; }
+.social-links .social-link[data-brand="vk"]:hover   { color:#4c75a3; }
+.social-links .social-link[data-brand="mail"]:hover { color:#ffd166; }
+
+/* ======== БЛАГОДАРНОСТИ ======== */
+
+#thanks-grid {
+  animation: fadeIn 0.6s ease;
+}
+
+.thanks-item {
+  border: 2px solid var(--brand-2);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.thanks-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Зелёная подсветка активного пункта меню */
+:root{
+  --active-green:#29ff57; /* зелёный из текущего дизайна шапки */
+}
+
+nav a.active{
+  color: var(--active-green) !important;
+  text-underline-offset: 4px;
+}
+/* ==== NAV: одинаковые отступы и отсутствие сдвигов при активном пункте ==== */
+.nav-list{
+  display:flex;
+  align-items:center;
+  gap: 2rem;           /* одинаковый отступ между всеми пунктами */
+  white-space: nowrap; /* не переносить пункты на новую строку */
+}
+.nav-list > li{ margin:0; }  /* если где-то было margin, обнуляем */
+
+.nav-list a{
+  font-weight: 600;           /* одинаковая толщина у всех, чтобы актив не сдвигал */
+  line-height: 1;             /* аккуратная вертикаль */
+}
+/* Галерея грамот — микроанимация */
+.gratitude-photos a{
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.gratitude-photos a:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+/* ==== КНОПКИ НА ГЛАВНОЙ (фиксированные размеры, не сбрасываются) ==== */
+#cover .btn-primary,
+#cover .btn-outline {
+  font-size: 1.5rem !important;        /* text-xl */
+  padding: 1.5rem 4rem !important;     /* py-5 px-12 */
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+#cover .btn-primary:hover,
+#cover .btn-outline:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,.3);
+}
+
+@media (max-width: 640px) {
+  #cover .btn-primary,
+  #cover .btn-outline {
+    font-size: 1.2rem !important;
+    padding: 1rem 2rem !important;
+    width: 100% !important;
+    max-width: 360px !important;
+  }
+}
+/* ======= О ФОНДЕ + КАРУСЕЛЬ ======= */
+
+/* Визуальные размеры карусели */
+.ag-viewport{
+  position: relative;
+  width: 100%;
+  height: 22rem;              /* ~ h-88 на десктопе */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.18);
+  background: #000;           /* фон под фото на случай прозрачности */
+}
+
+@media (min-width: 1024px){
+  .ag-viewport{ height: 26rem; } /* повыше на десктопе */
+}
+
+.ag-track{
+  display: flex;
+  height: 100%;
+  will-change: transform;
+  transition: transform .8s ease; /* плавность переключения */
+}
+
+.ag-slide{
+  min-width: 100%;
+  height: 100%;
+  user-select: none;
+  pointer-events: none; /* чтобы свайп ловили контейнеры */
+}
+.ag-slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* курсор-намёк: можно «тащить» */
+.ag-viewport.grabbing{ cursor: grabbing; }
+.ag-viewport:not(.grabbing){ cursor: grab; }
+/* ===== Последние новости (LN) ===== */
+#latest-news .ln-grid { align-items: stretch; }
+
+/* Карточка — растягивается по высоте колонки */
+#latest-news .ln-card { display:flex; flex-direction:column; height:100%; }
+
+/* Картинка фиксированного соотношения 16:9, без искажений */
+#latest-news .ln-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+/* Контент карточки */
+#latest-news .ln-body { display:flex; flex-direction:column; gap:.5rem; flex:1; }
+#latest-news .ln-date { font-size:.875rem; color:#6b7280; }            /* text-gray-500 */
+#latest-news .ln-title { font-weight:700; font-size:1.0625rem; line-height:1.3; }
+#latest-news .ln-excerpt { font-size:.9375rem; color:#374151; }        /* text-gray-700 */
+#latest-news .ln-link {
+  margin-top:auto;
+  color:#ff8562; text-decoration:underline;
+}
+#latest-news .ln-link:hover { color:#de4f2b; }
+/* ===== Последние новости (LN) ===== */
+#latest-news .ln-grid { align-items: stretch; }
+#latest-news .ln-card { display:flex; flex-direction:column; height:100%; }
+#latest-news .ln-img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; }
+#latest-news .ln-body { display:flex; flex-direction:column; gap:.5rem; flex:1; }
+#latest-news .ln-date { font-size:.875rem; color:#6b7280; }
+#latest-news .ln-title { font-weight:700; font-size:1.0625rem; line-height:1.3; }
+#latest-news .ln-excerpt { font-size:.9375rem; color:#374151; }
+#latest-news .ln-link { margin-top:auto; color:#ff8562; text-decoration:underline; }
+#latest-news .ln-link:hover { color:#de4f2b; }
+/* ===== Новости и отчёты ===== */
+#news .news-item { display:flex; flex-direction:column; height:100%; }
+#news .news-item img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; }
+
+/* --- NEWS: показываем только 6 карточек; остальное скрыто до клика --- */
+#news-grid.al-see-more > .news-item:nth-of-type(n + 7) {
+  display: none !important;
+}
+
+/* На случай, если забудешь .news-item на <article> */
+#news-grid.al-see-more > article:nth-of-type(n + 7) {
+  display: none !important;
+}
+
+/* ===== Лента благодарностей (карточки) ===== */
+#thanks-feed .g-grid { align-items: stretch; }
+#thanks-feed .g-item { display:flex; flex-direction:column; height:100%; background:#f8f8f8; border-radius:12px; overflow:hidden; box-shadow:0 4px 14px rgba(0,0,0,.06); transition:transform .2s ease, box-shadow .2s ease; }
+#thanks-feed .g-item:hover { transform: translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.12); }
+
+#thanks-feed .g-img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; background:#eee; }
+#thanks-feed .g-body { padding:1rem; display:flex; flex-direction:column; gap:.5rem; flex:1; }
+#thanks-feed .g-title { font-weight:700; font-size:1.025rem; line-height:1.3; }
+#thanks-feed .g-link { margin-top:auto; color:#ff8562; text-decoration:underline; }
+#thanks-feed .g-link:hover { color:#de4f2b; }
+
+/* Показать только первые 6 карточек в каждой ленте; остальное — по кнопке */
+#thanks-grid-news.al-see-more > .g-item:nth-of-type(n + 7),
+#thanks-grid.al-see-more      > .g-item:nth-of-type(n + 7){
+  display: none !important;
+}
+/* Новости и отчёты — бренд-оформление */
+:root{
+  --c-olive:#2D381C;
+  --c-sand:#E9E6DA;
+  --c-olive2:#5A6241;
+  --c-navy:#0D203B;
+  --c-maroon:#800000;
+}
+
+#news .news-item{
+  background: var(--c-sand);
+  border: 1px solid var(--c-olive2);
+}
+
+#news .news-item h3{
+  color: var(--c-navy);
+}
+
+#news .news-item .text-gray-500{
+  color: #6b7280; /* можно оставить как есть, нейтральный */
+}
+
+#news .news-item .text-gray-700{
+  color: #374151; /* читаемый тёмно-серый */
+}
+
+/* Кнопка "Показать ещё" в бренд-стиле */
+#see-more-news{
+  border-color: var(--c-olive2);
+  color: var(--c-olive2);
+}
+#see-more-news:hover{
+  background: var(--c-olive2);
+  color: #fff;
+}
+/* Лента благодарностей: скрываем всё, начиная с 7-й карточки */
+#thanks-grid.al-see-more > .thanks-item:nth-of-type(n + 7){
+  display: none !important;
+}
+/* Универсальный "see more": по умолчанию показываем первые 6 карточек */
+.al-see-more > * { display: none; }
+.al-see-more.al-collapsed > *:nth-child(-n+6) { display: block; }
+
+/* Кнопка-лоадер (опционально, если нужно скрывать кнопку, когда элементов ≤6) */
+.al-see-more.has-6-or-less + .al-see-more-btn { display: none; }
+
+/* Универсальный see-more: по умолчанию показываем только первые 6, пока есть .al-collapsed */
+.al-see-more > *        { display: none; }
+.al-see-more.al-collapsed > *:nth-child(-n + 6) { display: block; }
+/* Универсальный see-more: по умолчанию показываем первые 6 карточек */
+.al-see-more > * { display: none; }
+.al-see-more.al-collapsed > *:nth-child(-n+6) { display: block; }
+/* Показывать всё содержимое сетки «по умолчанию скрыто» */
+.al-see-more > * { display: none; }
+
+/* Когда сетка «свернута» — показываем первые 6 */
+.al-see-more.al-collapsed > *:nth-child(-n+6) { display: block; }
+
+/* КРИТИЧЕСКОЕ ПРАВИЛО: когда НЕ свернута — показываем все */
+.al-see-more:not(.al-collapsed) > * { display: block; }
+/* Универсальный see-more */
+.al-see-more > * { display: none; }                               /* всё скрыто по умолчанию */
+.al-see-more.al-collapsed > *:nth-child(-n+6) { display: block; } /* в свернутом состоянии показываем первые 6 */
+.al-see-more:not(.al-collapsed) > * { display: block; }           /* после клика показываем все */
+/* === Универсальное применение шрифта Eastman-Black к заголовкам новостей и благодарностей === */
+@font-face {
+  font-family: 'Eastman-Black';
+  src: url('assets/fonts/Eastman-Black.woff2') format('woff2'),
+       url('assets/fonts/Eastman-Black.woff') format('woff'),
+       url('assets/fonts/Eastman-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Заголовки новостей на всех страницах --- */
+.news-item h3,
+.news-item .news-title,
+.news-card h3,
+#news h3,
+#about .news-item h3,
+#about .news-card h3,
+#latest-news h3,
+#news-section h3 {
+  font-family: 'Eastman-Black', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+  text-transform: none;
+}
+
+/* --- Заголовки благодарностей --- */
+.thanks-item h3,
+#thanks h3,
+#gratitude h3,
+.al-thanks h3 {
+  font-family: 'Eastman-Black', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+}
+/* === Главный заголовок на главной странице === */
+.hero-title,
+.main-hero h1,
+#main-hero h1,
+#hero h1 {
+  font-family: 'Eastman-Black', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  word-wrap: break-word;
+  color: var(--text, #fff);
+}
+/* === Исправление перекрытия заголовка на мобильных === */
+@media (max-width: 768px) {
+  #hero,
+  .main-hero,
+  .hero-section {
+    margin-top: 80px; /* увеличь, если баннер выше */
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  #hero h1,
+  .main-hero h1,
+  .hero-title {
+    font-size: 1.4rem; /* чтобы помещался на экране */
+    line-height: 1.25;
+  }
+}
+/* === Подключение шрифта Eastman-Black === */
+@font-face {
+  font-family: 'Eastman-Black';
+  src: url('assets/fonts/Eastman-Black.woff2') format('woff2'),
+       url('assets/fonts/Eastman-Black.woff') format('woff'),
+       url('assets/fonts/Eastman-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === Главный заголовок на первом экране === */
+#hero h1,
+.hero h1,
+.hero-section h1,
+.main-hero h1,
+h1.hero-title {
+  font-family: 'Eastman-Black' !important;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  line-height: 1.2;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+/* === Чтобы не перекрывалось шапкой на мобильных === */
+@media (max-width: 768px) {
+  #hero,
+  .hero,
+  .hero-section,
+  .main-hero {
+    margin-top: 100px !important; /* при необходимости увеличь */
+    padding: 0 16px;
+  }
+
+  #hero h1,
+  .hero h1,
+  .hero-section h1,
+  .main-hero h1 {
+    font-size: 1.4rem;
+    line-height: 1.25;
+  }
+}
+/* === Главный заголовок на обложке (index.html → #cover h1) === */
+/* Главный заголовок (во весь экран без уезжания) */
+/* Главный заголовок: во всю ширину экрана, без уезжания */
+#cover h1{
+  font-family:'Eastman-Black','Eastman Pack',system-ui,sans-serif !important;
+  font-weight:900 !important;
+  text-transform:uppercase;
+  letter-spacing:.6px;
+  color:#fff !important;
+
+  box-sizing: border-box;
+  width: 100vw;          /* во всю ширину вьюпорта */
+  max-width: 100vw;
+  margin: 0;             /* без авто-маржинов контейнеров */
+  padding: 0 5vw;        /* ← меняй эти отступы, чтобы регулировать «визуальную ширину» */
+  position: static;      /* сброс прежнего relative/left/transform */
+}
+
+/* Главный заголовок на обложке — по контейнеру, строго над абзацем */
+#cover h1{
+  font-family:'Eastman-Black','Eastman Pack',system-ui,sans-serif !important;
+  font-weight:900 !important;
+  text-transform:uppercase;
+  letter-spacing:.6px;
+  color:#fff !important;
+
+  /* никаких трюков с позиционированием/вьюпортом: */
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  margin: 0 0 .5rem 0; /* небольшой отступ снизу перед абзацем */
+  padding: 0;
+  text-align: left;
+  position: static;
+  transform: none;
+  left: auto;
+}
+/* === 1) На десктопе расширяем колонку с заголовком в cover === */
+/* У твоего блока внутри cover стоит Tailwind класс lg:w-2/3 — переопределим его. */
+@media (min-width: 1024px){
+  #cover .lg\:w-2\/3{
+    width: 100% !important;    /* ← если хочешь чуть уже, поставь 80% или 90% */
+  }
+}
+
+/* === 2) Заголовок: плавный размер + нормальная разбивка строк === */
+#cover h1{
+  /* размер: от 28px до 64px, адаптивно от ширины вьюпорта */
+  font-size: clamp(28px, 5.2vw, 64px);
+  line-height: 1.15;
+  white-space: normal;       /* на всякий случай: не принудительно одна строка */
+  text-wrap: balance;        /* равномернее распределяет слова по строкам */
+  hyphens: auto;             /* переносы при узких ширинах, если будет нужно */
+  max-width: 100%;           /* не ограничиваем сверх контейнера */
+}
+
+/* (опционально) на очень больших экранах можно чутка увеличить верхнюю границу */
+@media (min-width: 1440px){
+  #cover h1{ font-size: clamp(28px, 4vw, 72px); } /* ← правь под вкус */
+}
+/* === БРЕНДОВАЯ ШАПКА/НАВИГАЦИЯ === */
+#main-nav{
+  background: color-mix(in srgb, var(--c-navy) 80%, transparent) !important; /* #0D203B с прозрачностью */
+  backdrop-filter: blur(6px);
+}
+.nav-list a{
+  color: #fff !important;
+}
+nav a.active{
+  color: #fff !important;               /* активная — белая на тёмном фоне */
+  position: relative;
+}
+nav a.active::after{
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -8px;
+  height: 2px;
+  background: var(--c-olive);           /* зелёная «полоска» под активом */
+  border-radius: 2px;
+}
+
+/* === Мобильный выдвижной блок меню === */
+#mobile-menu{
+  background: var(--c-navy) !important; /* тёмно-синий из брендбука */
+}
+#mobile-menu a{
+  color: #fff !important;
+}
+#mobile-menu a:hover{
+  background: color-mix(in srgb, #fff 12%, transparent);
+}
+
+/* === РЕКВИЗИТЫ (унифицированный блок) === */
+.brand-donate{
+  --donate-bg: var(--c-olive);          /* #2D381C — зелёный из брендбука */
+  background: var(--donate-bg) !important;
+  color: #fff !important;
+}
+.brand-donate h2{
+  font-family: 'Eastman-Black', 'Eastman Pack', system-ui, sans-serif;
+  font-weight: 900;
+}
+.brand-donate .donate-list{
+  font-family: "Eastman Pack", system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif !important; /* вместо monospace */
+  font-size: 1.125rem; /* ~text-lg */
+  line-height: 1.6;
+}
+.brand-donate a{
+  color: #fff !important;
+  text-decoration: underline;
+}
+.brand-donate img{ filter: none; }
+
+/* === ВКЛАДКИ/РАЗДЕЛЫ (если есть табы на страницах) === */
+.tabs-bar{
+  background: var(--c-sand);            /* бледный песочный фон */
+  border-bottom: 1px solid var(--c-olive2);
+}
+.tabs-bar a{
+  color: var(--c-navy);
+}
+.tabs-bar a.active{
+  color: var(--c-olive);                 /* активная — зелёная */
+  border-bottom: 2px solid var(--c-olive);
+}
+
+/* Небольшой фикс: в целом сайт светлый — базовые цвета уже привязаны к палитре */
+body{ background: var(--bg); color: var(--fg); }
+/* === [6] Документы: крупный заголовок и растягивающиеся плитки === */
+.docs-grid .doc-card,
+#docs-grid .doc-card { display:flex; flex-direction:column; height:100%; }
+
+.doc-big{
+  font-family:'Eastman-Black','Eastman Pack',system-ui,sans-serif;
+  font-weight:900;
+  font-size: clamp(22px, 2.1vw, 30px);
+  line-height: 1.25;
+  margin-bottom: .25rem;
+}
+
+.docs-grid .doc-card .doc-body,
+#docs-grid .doc-card .doc-body { flex:1; display:flex; flex-direction:column; }
+/* === [7] Благодарности: вид как у новостей === */
+#thanks-grid .news-item,
+#thanks-feed .news-item{
+  display:flex; flex-direction:column; height:100%;
+  background: var(--c-sand);
+  border: 1px solid var(--c-olive2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#thanks-grid .news-item .ln-img,
+#thanks-feed .news-item .ln-img{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  display:block;
+}
+
+#thanks-grid .news-item .ln-body,
+#thanks-feed .news-item .ln-body{ display:flex; flex-direction:column; gap:.5rem; flex:1; padding: 1rem; }
+
+#thanks-grid .news-item .ln-date,
+#thanks-feed .news-item .ln-date{ font-size:.875rem; color:#6b7280; } /* text-gray-500 */
+
+#thanks-grid .news-item .ln-title,
+#thanks-feed .news-item .ln-title{
+  font-family:'Eastman-Black','Eastman Pack',system-ui,sans-serif;
+  font-weight:900; font-size:1.0625rem; line-height:1.3; color:var(--c-navy);
+}
+/* === Документы: крупный заголовок «во всю плитку» === */
+
+/* Плитка тянется по высоте колонки */
+#docs-grid .doc-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Заголовок — крупный, выразительный */
+#docs-grid .doc-title {
+  font-family: 'Eastman-Black','Eastman Pack',system-ui,sans-serif;
+  font-weight: 900;
+  font-size: clamp(22px, 2.2vw, 32px); /* адаптивный размер */
+  line-height: 1.2;
+  margin: 0;             /* убираем лишние внешние отступы */
+}
+
+/* На маленьких экранах — немного воздуха вокруг */
+@media (max-width: 640px){
+  #docs-grid .doc-item { padding: 1rem; }
+}
+/* === Документы: заголовок плитки — крупнее и Eastman-Black === */
+#docs-grid .doc-title{
+  font-family: 'Eastman-Black','Eastman Pack',system-ui,sans-serif;
+  font-weight: 900;
+  font-size: clamp(28px, 3.2vw, 44px); /* ↑ был меньше — сделал заметно крупнее */
+  line-height: 1.15;
+  letter-spacing: .4px;
+  margin: 0;
+  text-wrap: balance; /* равномерные переносы строк */
+}
+/* === Благодарности: тот же вид, что и «Новости» === */
+#thanks-grid .news-item{
+  display:flex; flex-direction:column; height:100%;
+  background: var(--c-sand);
+  border: 1px solid var(--c-olive2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#thanks-grid .ln-img{
+  width:100%;
+  aspect-ratio:16/9;      /* та же «плитка» 16:9 */
+  object-fit:cover;
+  display:block;
+}
+
+#thanks-grid .ln-body{
+  display:flex; flex-direction:column; gap:.5rem; flex:1;
+  padding: 1rem;
+}
+
+#thanks-grid .ln-date{
+  font-size:.875rem; color:#6b7280;     /* как в новостях */
+}
+
+#thanks-grid .ln-title{
+  font-family:'Eastman-Black','Eastman Pack',system-ui,sans-serif;
+  font-weight:900;
+  font-size:1.0625rem;
+  line-height:1.3;
+  color:var(--c-navy);
+}
+
+/* === Показывать ВСЕ карточки благодарностей === */
+/* Можно просто убрать al-see-more на контейнере, но на всякий случай отключим все скрывающие правила */
+#thanks-grid > * { display: block !important; }
+/* ====== CONTACTS (палитра по брендбуку) ====== */
+/* Палитра уже есть в :root у тебя в файле: --c-olive, --c-gray, --c-sand, --c-maroon, --c-olive2, --c-navy. */
+
+/* Hero */
+.contact-hero{
+  background: var(--c-sand);        /* #E9E6DA */
+  border-bottom: 1px solid var(--c-olive2);
+}
+.contact-title{
+  font-family:'Zarubka type',system-ui,sans-serif;
+  font-weight:900;
+  font-size:clamp(28px,4.2vw,56px);
+  line-height:1.15;
+  color:var(--c-navy);              /* #0D203B */
+  letter-spacing:.4px;
+}
+.contact-sub{
+  margin-top:.75rem;
+  font-size:clamp(16px,1.8vw,20px);
+  color:var(--c-gray);              /* #4D4D4D */
+}
+
+/* Карточки */
+.contact-card{
+  display:flex; gap:14px; align-items:flex-start;
+  background:#fff;
+  border:1px solid var(--c-olive2);
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.contact-card:hover{
+  transform: translateY(-2px);
+  box-shadow:0 12px 28px rgba(0,0,0,.10);
+  border-color: var(--c-olive);     /* зелёный акцент #2D381C */
+}
+
+/* Иконка-кружок */
+.contact-icon{
+  width:44px; height:44px; min-width:44px;
+  display:grid; place-items:center;
+  border-radius:999px;
+  background: var(--c-olive);       /* по умолчанию — бренд-зелёный */
+  color:#fff;
+}
+.contact-icon svg{ width:22px; height:22px; fill:currentColor; }
+
+/* Специальные цвета для соцсетей (по гайду) */
+.contact-icon.is-tg{ background:#29a9eb; }     /* Telegram */
+.contact-icon.is-vk{ background:#4c75a3; }     /* VK */
+.contact-icon.is-ok{ background:#ee8208; }     /* OK */
+
+/* Текст внутри карточки */
+.contact-body h3{
+  font-weight:800;
+  color:var(--c-navy);
+  margin:0;
+}
+.contact-body p{
+  margin:.15rem 0 0;
+  color:var(--c-gray);
+}
+
+/* Круглые иконки в шапке */
+.contact-social{
+  width:36px; height:36px;
+  display:grid; place-items:center;
+  border-radius:999px;
+  background:#ffffff14;
+  border:1px solid #ffffff33;
+  color:#fff;
+  transition:transform .18s ease, background .18s ease, border-color .18s ease;
+}
+.contact-social:hover{
+  transform:translateY(-2px);
+  background:#ffffff24;
+  border-color:#ffffff66;
+}
+.contact-social svg{ fill:#fff; }
+
+/* Мобильное меню — фон по брендбуку */
+#mobile-menu{ background: var(--c-navy) !important; } /* #0D203B */
+/* === Активные сборы — бренд-оформление === */
+.programs-section{ 
+  background: var(--c-sand);
+}
+.programs-section h1,
+.programs-section h2{
+  color: var(--c-navy);
+}
+
+/* карточка/слайд программы */
+.program-slide > *{
+  background:#fff;
+  border: 1px solid var(--c-olive2);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  overflow: hidden;
+}
+.program-slide h3{
+  color: var(--c-navy);
+  font-weight: 700;
+}
+.program-slide a{
+  color: var(--c-maroon);
+}
+.program-slide a:hover{
+  color:#a64040; /* чуть темнее акцент */
+}
+/* Благодарности — в стиле карточек новостей */
+#thanks .g-item,
+#thanks-grid .g-item,
+#thanks-grid-news .g-item{
+  background: var(--c-sand);
+  border: 1px solid var(--c-olive2);
+}
+#thanks .g-title{ color: var(--c-navy); font-weight:700; }
+#thanks .g-link{ color: var(--c-maroon); text-decoration: underline; }
+#thanks .g-link:hover{ color:#a64040; }
+/* === Брендовый hero без правок HTML === */
+.hero-brand {
+  background: var(--c-sand) !important;          /* песочный фон */
+  border-bottom: 1px solid var(--c-olive2) !important;
+}
+
+/* если на странице по старинке висит bg-white — перебиваем */
+body.bg-white,
+body[class*="bg-white"] {
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+}
+
+/* чуть воздуха, чтобы выглядело как на других секциях */
+.hero-brand { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+/* === Header: активный пункт — белое подчёркивание === */
+header nav a.active,
+header nav a[aria-current="page"] {
+  color: #fff !important;           /* сам текст — белый */
+  position: relative;               /* нужно для ::after */
+  text-decoration: none !important; /* убираем стандартные подчёркивания */
+}
+
+header nav a.active::after,
+header nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;    /* отступ от текста, подгони при желании */
+  height: 2px;     /* толщина линии */
+  background: #fff !important;  /* белая линия */
+  border-radius: 2px;
+  pointer-events: none;
+}
+/* === Мобильное меню: одинаковые отступы/ховер для всех ссылок === */
+#mobile-menu a{
+  display:block !important;
+  padding:.5rem 0 !important;       /* 8px сверху/снизу */
+  border-radius:.5rem;
+  color:#fff !important;
+}
+#mobile-menu a:hover{
+  background: rgba(255,255,255,.12);
+}
+/* ===== БРЕНД-ПАЛИТРА (используем уже заведённые токены) =====
+   :root содержит:
+   --c-navy:#0D203B; --c-olive:#2D381C; --c-olive2:#5A6241; --c-sand:#E9E6DA; ...
+   см. ранее в файле. */
+
+/* 1) Index → Последние новости: ссылка "Читать..." синяя по брендбуку */
+#latest-news .ln-link{
+  color: var(--c-navy) !important;        /* #0D203B */
+  text-decoration: underline;
+}
+#latest-news .ln-link:hover,
+#latest-news .ln-link:focus,
+#latest-news .ln-link:active{
+  color: var(--c-navy) !important;        /* оставляем ту же, без оранжевых состояний */
+  opacity: .9;
+}
+
+/* 2) Во всех вкладках: секция реквизитов (.brand-donate) светло-зелёная */
+.brand-donate{
+  --donate-bg: var(--c-olive) !important; /* #5A6241 — светлее, чем #2D381C */
+  background: var(--donate-bg) !important;
+  color: #fff !important;
+}
+
+/* 3) "Активные сборы": кнопки "Поддержать" и прогресс-заливка светло-зелёные */
+.programs-section .progress-bar{
+  background: var(--c-olive2) !important; /* #5A6241 */
+}
+.programs-section button{
+  background: var(--c-olive2) !important; /* перебиваем bg-[#026d1a] из HTML */
+  color:#fff !important;
+  border-color: transparent !important;
+}
+.programs-section button:hover{
+  filter: brightness(.92);
+}
+/* === Заголовки: благодарности, документы, активные сборы — Eastman-Black === */
+@font-face{
+  font-family:'Eastman-Black';
+  src: url('assets/fonts/Eastman-Black.woff2') format('woff2'),
+       url('assets/fonts/Eastman-Black.woff')  format('woff'),
+       url('assets/fonts/Eastman-Black.ttf')   format('truetype');
+  font-weight:900;
+  font-style:normal;
+  font-display:swap;
+}
+
+/* Благодарности: заголовки карточек */
+.g-title{
+  font-family:'Eastman-Black', system-ui, sans-serif;
+  font-weight:900;
+  letter-spacing:.3px;
+}
+
+/* Документы: заголовки карточек */
+#docs-grid h3{
+  font-family:'Eastman-Black', system-ui, sans-serif;
+  font-weight:900;
+  letter-spacing:.3px;
+}
+
+/* Активные сборы: заголовки карточек/слайдов */
+.program-slide h3{
+  font-family:'Eastman-Black', system-ui, sans-serif;
+  font-weight:900;
+  letter-spacing:.3px;
+}
+/* Активные сборы → заголовки карточек на Eastman-Black */
+section.px-5.py-20.bg-gray-50.border-t.border-gray-200 h3{
+  font-family:'Eastman-Black', system-ui, sans-serif !important;
+  font-weight:900 !important;
+  letter-spacing:.3px;
+}
+/* Благодарности: ссылка как в новостях, на бренд-синем */
+#thanks-grid .ln-link{
+  color: var(--c-navy) !important;   /* #0D203B */
+  text-decoration: underline;
+}
+#thanks-grid .ln-link:hover{ opacity:.9; }
+/* === THANKS: карточки с грамотами — белые плитки === */
+#thanks-grid .news-item{
+  background:#fff !important;
+  border: 1px solid var(--c-olive2);
+  border-radius:10px;
+  overflow:hidden;
+}
+
+/* Ссылки в карточках — как в новостях (синий бренд) */
+#thanks-grid .ln-link{
+  color: var(--c-navy) !important;
+  text-decoration: underline;
+}
+#thanks-grid .ln-link:hover{ opacity:.9; }
+
+/* === THANKS: белая кнопка "Показать ещё" === */
+#see-more-thanks{
+  background:#fff !important;
+  border-color: var(--c-olive2) !important;
+  color: var(--c-olive2) !important;
+}
+#see-more-thanks:hover{
+  background: var(--c-olive2) !important;
+  color:#fff !important;
+}
+
+/* === THANKS: корректная свёртка 6 → всё (перебиваем раннее #thanks-grid > * {...}) === */
+#thanks-grid.al-see-more.al-collapsed > *{ display:none !important; }
+#thanks-grid.al-see-more.al-collapsed > *:nth-child(-n+6){ display:block !important; }
+#thanks-grid.al-see-more:not(.al-collapsed) > *{ display:block !important; }
+/* === THANKS → фон секции как в новостях (белый) === */
+section:has(#thanks-grid){
+  background:#fff !important;
+  /* если сверху был цветной бордер — убираем, чтобы выглядело 1-в-1 с новостями */
+  border-top-color: transparent !important;
+}
+
+/* === THANKS → карточки как в новостях === */
+#thanks-grid .news-item{
+  background:#E9E6DA !important;     /* как в news: bg-[#f8f8f8] */
+  border:0 !important;
+  border-radius:.75rem !important;    /* rounded-xl */
+  overflow:hidden;
+  box-shadow:0 1px 2px rgba(0,0,0,.06);
+  transition:box-shadow .2s ease;
+}
+#thanks-grid .news-item:hover{
+  box-shadow:0 6px 20px rgba(0,0,0,.12);
+}
+#thanks-grid .ln-img{
+  width:100%; height:12rem; object-fit:cover; display:block; /* как h-48 object-cover */
+}
+#thanks-grid .ln-body{ padding:1.25rem !important; }         /* p-5 */
+
+/* === THANKS → кнопка “Показать ещё” на белом фоне (как в новостях) === */
+#thanks-grid.al-see-more.al-collapsed + .text-center .al-see-more-btn{
+  display:inline-block !important; /* на всякий случай показываем кнопку при >6 карточек */
+}
+#see-more-thanks{
+  background:#fff !important;
+  border:2px solid #5A6241 !important; /* ваш светло-зелёный */
+  color:#5A6241 !important;
+}
+#see-more-thanks:hover{ background:#5A6241 !important; color:#fff !important; }
+
+/* === THANKS → корректная свёртка 6 → всё === */
+#thanks-grid.al-see-more.al-collapsed > *{ display:none !important; }
+#thanks-grid.al-see-more.al-collapsed > *:nth-child(-n+6){ display:block !important; }
+#thanks-grid.al-see-more:not(.al-collapsed) > *{ display:block !important; }
+/* === Документы: карточки как в «Контактах» === */
+#docs-grid > a,
+#docs-grid .doc-card{
+  background:#fff;                       /* как у .contact-card */
+  border:1px solid var(--c-olive2);      /* тот же «чёрный/тёмный» контур из контактов */
+  border-radius:14px;
+  padding:18px;                           /* как у .contact-card */
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+#docs-grid > a:hover,
+#docs-grid .doc-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.10);
+  border-color: var(--c-olive);           /* ховер-акцент как в контактах */
+}
+
+/* Заголовок внутри плитки документов — тот же стиль шрифта */
+#docs-grid > a h3,
+#docs-grid .doc-card h3{
+  margin:0;
+  color: var(--c-navy);
+  font-family:'Eastman-Black', system-ui, sans-serif;
+  font-weight:900;
+  letter-spacing:.3px;
+}
+
+/* Столько же «воздуха» после сетки, как в Контактах (pb-20) */
+#docs-grid{ padding-bottom:5rem; }
+/* === NAV: одинаковый hover для всех пунктов, включая .active === */
+.nav-list a,
+nav a.active{
+  transition: opacity .15s ease;
+}
+
+/* тот самый «слегка серый» эффект — это по сути уменьшение непрозрачности */
+.nav-list a:hover,
+nav a.active:hover{
+  opacity: .5;
+}
+
+/* активный пункт тоже должен ховериться (отменяем блокировку кликов, если была) */
+nav a.active{
+  pointer-events: auto;
+}

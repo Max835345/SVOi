@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru" style="overflow-x: hidden">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Фонд «Свои Рядом» — О Фонде, помощь и поддержка</title>
+  <meta name="description" content="Фонд «Свои Рядом»: адресная социальная, юридическая, гуманитарная и психологическая помощь." />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preload" href="assets/fonts/Eastman-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/Eastman-Black.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  <!-- Подстраховочный @font-face прямо в <head> (чтобы точно работало) -->
+  <style>
+    @font-face{
+      font-family:"Eastman Pack";
+      src: url("assets/fonts/Eastman-Regular.ttf") format("opentype");
+      font-weight:400;
+      font-style:normal;
+      font-display:swap;
+    }
+    @font-face{
+      font-family:"Zarubka Type";
+      src: url("assets/fonts/zarubkaType-Regular.ttf") format("truetype");
+      font-weight:400;
+      font-style:normal;
+      font-display:swap;
+    }
+    :root{
+      --font-text:"Eastman Pack", system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+      --font-display:"Zarubka Type", var(--font-text);
+    }
+    /* немедленно применим — на случай, если внешний CSS загрузится позже */
+    body{ font-family: var(--font-text); }
+    h1,h2,h3{ font-family: var(--font-display); letter-spacing:.3px; }
+  </style>
+
+  <!-- Наш общий CSS (в нём могут дублироваться эти же правила — это нормально) -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-white text-black" style="margin:0; overflow-x:hidden">
+
+<!-- ====== HEADER (унифицированный) ====== -->
+  <header id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-[#0b0b0b]/80 backdrop-blur shadow-sm">
+    <div class="max-w-7xl mx-auto px-5 h-20 flex justify-between items-center">
+      <a href="index.html" class="flex items-center">        <img src="donesvo-white.png" alt="Фонд «Свои Рядом»" class="max-h-20 h-16">
+      </a>
+
+      <nav class="hidden lg:block">
+        <ul class="nav-list text-white font-semibold">
+          <li><a href="index.html" class="hover:opacity-80">О Фонде</a></li>
+          <li><a href="programs.html" class="hover:opacity-80">Активные сборы</a></li>
+          <li><a href="news.html" class="hover:opacity-80">Новости/Отчеты</a></li>
+          <li><a href="thanks.html" class="active">Благодарности</a></li>
+          <li><a href="doc.html" class="hover:opacity-80">Документы</a></li>
+          <li><a href="contacts.html" class="hover:opacity-80">Контакты</a></li>
+        </ul>
+      </nav>
+
+
+      <div class="flex items-center gap-5">
+        <div class="social-links" style="display: flex; gap: 16px; align-items: center;">
+            <a href="https://t.me/SVOIRYADOM77" class="social-icon" aria-label="Telegram" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-current text-[#29a9eb]">
+                    <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12C24 5.372 18.627 0 12 0zm5.833 8.24l-1.63 7.682c-.122.57-.464.706-.945.439l-2.6-1.905-1.251 1.204c-.14.135-.255.248-.363.25l.184-2.63 4.814-4.353c.209-.188-.045-.292-.325-.106l-5.949 3.746-2.567-.802c-.56-.175-.574-.561.12-.85l10.037-3.864c.466-.173.875.113.721.849z"/>
+                  </svg>
+            </a>
+          
+            <a href="https://vk.com/svoirydom77" class="social-icon" aria-label="ВКонтакте" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-current text-[#4c75a3]">
+                    <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12C24 5.372 18.627 0 12 0zm4.732 17.407h-1.29c-.505 0-.66-.406-1.568-1.312-.818-.813-1.168-.83-1.363-.83-.276 0-.354.08-.354.47v1.232c0 .34-.11.53-.98.53-1.447 0-3.05-1.04-4.18-2.97-1.707-2.97-2.17-5.212-2.17-5.212 0-.232.08-.455.46-.455h1.29c.34 0 .5.154.63.53.69 2.053 1.853 4.25 2.217 4.25.17 0 .25-.08.25-.54V9.92c-.05-.46-.27-.5-.27-.66 0-.19.15-.37.46-.37h2.03c.38 0 .46.17.46.53v2.83c0 .31.13.41.22.41.17 0 .33-.1.67-.47 1.07-1.21 1.84-3.09 1.84-3.09.11-.27.27-.4.62-.4h1.29c.43 0 .52.23.43.53-.18.78-2.06 3.51-2.06 3.51-.17.27-.23.4 0 .69.17.21.74.71 1.11 1.15.7.8 1.24 1.47 1.38 1.94.11.39-.08.59-.54.59z"/>
+                  </svg>
+            </a>
+          
+            <a href="https://ok.ru/group/70000007262636" class="social-icon" aria-label="Одноклассники" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-6 h-6 fill-current text-[#ee8208]">
+                    <path d="m49.833,95.981c-25.345-.102-45.997-21.001-45.842-46.389C4.147,24.281,25.11,3.717,50.544,3.925c25.141.205,45.63,20.937,45.587,46.127-.043,25.349-20.892,46.031-46.298,45.928Zm-.013-48.066c7.632.136,14.095-6.104,14.231-13.739.136-7.628-6.103-14.079-13.749-14.216-7.624-.137-14.096,6.11-14.229,13.733-.133,7.616,6.121,14.086,13.747,14.222Zm-7.795,15.374c-2.189,1.804-3.775,3.008-5.241,4.343-2.22,2.022-4.23,4.362-1.345,7.141,2.633,2.536,4.878.682,6.811-1.377,2.47-2.631,4.891-5.308,7.899-8.58,2.718,3.068,4.605,5.398,6.707,7.513,2.143,2.156,4.399,5.635,7.815,2.392,3.442-3.267.085-5.576-2.031-7.837-1.187-1.268-2.39-2.522-3.768-3.973,2.088-1.015,3.996-1.385,4.926-2.541,1.073-1.332,2.153-3.733,1.616-4.973-.503-1.163-3.553-2.419-4.723-1.906-7.189,3.15-14.09,3.147-21.277-.006-1.163-.51-4.208.777-4.719,1.955-.533,1.228.579,3.627,1.66,4.955.936,1.15,2.835,1.519,5.671,2.894Z"/>
+                  </svg>
+            </a>
+          </div>
+
+        <button id="mobile-menu-btn" class="lg:hidden t-menuburger z-50">
+          <span class="bg-white"></span>
+          <span class="bg-white"></span>
+          <span class="bg-white"></span>
+          <span class="bg-white"></span>
+        </button>
+      </div>
+    </div>
+    
+<nav id="mobile-menu" class="fixed top-0 left-0 w-full h-screen bg-[#ff7c3b] transform -translate-y-full transition-transform duration-300 lg:hidden z-40" aria-label="Мобильная навигация">
+  <div class="pt-24 px-5 space-y-4 text-white text-2xl">
+    <a href="index.html" class="block py-2 bg-white/10 rounded">О Фонде</a>
+    <a href="programs.html" class="block py-2 hover:bg-white/10 rounded">Активные сборы</a>
+    <a href="news.html" class="block py-2 hover:bg-white/10 rounded">Новости/Отчёты</a>
+    <a href="thanks.html" class="hover:opacity-80">Благодарности</a>
+    <a href="doc.html" class="block py-2 hover:bg-white/10 rounded">Документы</a>
+    <a href="contacts.html" class="block py-2 hover:bg-white/10 rounded">Контакты</a>
+  </div>
+</nav>
+
+  </header>
+
+  <main>
+
+    <section id="cover"
+             class="h-screen relative bg-cover bg-center bg-[url('https://static.tildacdn.info/tild3666-6232-4831-a630-636661376139/noroot.png')]">
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="relative h-full flex items-center max-w-7xl mx-auto px-5">
+        <div class="w-full lg:w-2/3 space-y-6 text-white">
+          <h1 class="text-4xl lg:text-5xl font-bold leading-tight" style="line-height: 1.2;">
+            Фонд поддержки пострадавших в результате военных действий <br>«Свои Рядом»
+          </h1>
+          <p class="text-xl">
+            Мы оказываем адресную социальную, юридическую, гуманитарную и психологическую помощь.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-2" style="align-items: center;">
+            <button id="open-donate" class="btn-primary">Поддержать бойцов</button>
+            <button id="open-help" class="btn-outline">Запросить помощь</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- О ФОНДЕ + КАРУСЕЛЬ -->
+<section id="about" class="py-24 bg-[#f5f2ed] px-5">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      
+      <!-- ЛЕВАЯ КОЛОНКА: текст (выравнивание по левому краю) -->
+      <div class="about-copy lg:pr-8">
+        <h2 class="text-4xl font-bold mb-6">О Фонде</h2>
+        <p class="text-xl leading-relaxed">
+          Фонд нацелен на всестороннюю поддержку интересов участников и ветеранов боевых действий, а также их семей.
+          Гуманитарная помощь бойцам на передовой — наше основное направление деятельности. Наша миссия — быть опорой и
+          надёжным партнёром для тех, кто готов жертвовать своими силами и здоровьем во имя мира и безопасности.
+        </p>
+      </div>
+      <!-- ПРАВАЯ КОЛОНКА: карусель -->
+      <div class="about-gallery">
+        <div id="about-gallery" class="ag-viewport">
+          <ul class="ag-track">
+            <li class="ag-slide"><img src="images/about/01.jpg" alt="Фотография 1"></li>
+            <li class="ag-slide"><img src="images/about/02.jpg" alt="Фотография 2"></li>
+            <li class="ag-slide"><img src="images/about/03.jpg" alt="Фотография 3"></li>
+            <li class="ag-slide"><img src="images/about/04.jpg" alt="Фотография 4"></li>
+            <li class="ag-slide"><img src="images/about/05.jpg" alt="Фотография 5"></li>
+            <li class="ag-slide"><img src="images/about/06.jpg" alt="Фотография 6"></li>
+            <li class="ag-slide"><img src="images/about/07.jpg" alt="Фотография 7"></li>
+            <li class="ag-slide"><img src="images/about/08.jpg" alt="Фотография 8"></li>
+            <li class="ag-slide"><img src="images/about/09.jpg" alt="Фотография 9"></li>
+            <li class="ag-slide"><img src="images/about/10.jpg" alt="Фотография 10"></li>
+            <li class="ag-slide"><img src="images/about/11.jpg" alt="Фотография 11"></li>
+            <li class="ag-slide"><img src="images/about/12.jpg" alt="Фотография 12"></li>
+          </ul>
+        </div>
+      </div>
+    </div> <!-- /grid -->
+  </div>   <!-- /container -->
+</section> <!-- /О Фонде -->
+
+<!-- ======= ПОСЛЕДНИЕ НОВОСТИ (во всю ширину) ======= -->
+<section id="latest-news" class="py-16 px-5 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold mb-10">Последние новости</h2>
+
+    <div class="ln-grid grid grid-cols-1 md:grid-cols-3 gap-8">
+      <article class="ln-card bg-[#f8f8f8] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
+        <img src="images/news/2025-10-11-mgimo.jpg" alt="Мастер-класс по тактической медицине на Гонке МГИМО" class="ln-img">
+        <div class="ln-body p-5">
+          <time class="ln-date">11.10.2025</time>
+          <h3 class="ln-title">Фонд «СВОи Рядом» провел мастер-класс по тактической медицине на Гонке МГИМО</h3>
+          <p class="ln-excerpt">В рамках пятой юбилейной Гонки МГИМО фонд организовал для участников практическое занятие по тактической медицине. Студенты отработали навыки первой помощи…</p>
+          <a href="news.html" class="ln-link">Читать в новостях</a>
+        </div>
+      </article>
+
+      <article class="ln-card bg-[#f8f8f8] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
+        <img src="images/news/2025-08-17-masks.jpg" alt="Волонтёры «По ZOVу Сердца» передали маскировочные сети" class="ln-img">
+        <div class="ln-body p-5">
+          <time class="ln-date">17.08.2025</time>
+          <h3 class="ln-title">Волонтёры «По ZOVу Сердца» передали маскировочные сети для фронта</h3>
+          <p class="ln-excerpt">Фонд «Свои рядом» выражает благодарность группе волонтёров «По ZOVу Сердца» из Нагорного района Москвы за передачу маскировочных сетей…</p>
+          <a href="news.html" class="ln-link">Читать в новостях</a>
+        </div>
+      </article>
+
+      <article class="ln-card bg-[#f8f8f8] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition">
+        <img src="images/news/2025-07-24-first-aid.jpg" alt="Фонд передал аптечки 2-го эшелона батальону «Сомали»" class="ln-img">
+        <div class="ln-body p-5">
+          <time class="ln-date">24.07.2025</time>
+          <h3 class="ln-title">Фонд передал партию аптечек 2-го эшелона батальону «Сомали»</h3>
+          <p class="ln-excerpt">Собранные фондом аптечки первой помощи направлены в батальон «Сомали». Наборы переданы вместе с УАЗом «Байкал» для использования на передовой…</p>
+          <a href="news.html" class="ln-link">Читать в новостях</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+  </main>
+<section class="brand-donate py-24 px-5">
+  <div class="max-w-7xl mx-auto space-y-8">
+      <h2 class="text-3xl font-bold">Реквизиты для пожертвования:</h2>
+
+      <ul class="donate-list space-y-2">
+          <li>Полное наименование: ФОНД ПОДДЕРЖКИ ПОСТРАДАВШИХ В РЕЗУЛЬТАТЕ ВОЕННЫХ ДЕЙСТВИЙ «СВОИ РЯДОМ»</li>
+          <li>ИНН: 9718273681</li>
+          <li>Номер счёта: 40703810902720000178</li>
+          <li>Банк: АО «АЛЬФА-БАНК»</li>
+          <li>ИНН банка: 7728168971</li>
+          <li>КПП: 771801001</li>
+          <li>БИК: 044525593</li>
+          <li>Корр. счёт: 30101810200000000593</li>
+          <li>Назначение платежа: «Пожертвование»</li>
+      </ul>
+
+      <h2 class="text-xl font-bold pt-4">Для переводов по СБП:</h2>
+      <a href="https://qr.nspk.ru/BS2A005U37QQC7BP8CP91TUEHIHUBQM6?type=01&bank=100000000008&crc=E4F9" class="underline break-words">
+        https://qr.nspk.ru/BS2A005U37QQC7BP8CP91TUEHIHUBQM6?type=01&bank=100000000008&crc=E4F9
+      </a>
+
+      <img src="qr.jpg" alt="QR для перевода по СБП" class="max-w-[320px] max-h-[320px] pt-4">
+      
+  </div>
+</section>
+
+<footer class="bg-[#5A6241] text-white py-16 px-5">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+    <!-- ЛЕВО: соцсети (без ДЗЕН) -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Наши социальные сети</h2>
+      <div class="flex gap-5 items-center">
+        <a href="https://t.me/SVOIRYADOM77" class="social-icon" aria-label="Telegram" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 fill-current text-[#29a9eb]"><path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12C24 5.372 18.627 0 12 0zm5.833 8.24l-1.63 7.682c-.122.57-.464.706-.945.439l-2.6-1.905-1.251 1.204c-.14.135-.255.248-.363.25l.184-2.63 4.814-4.353c.209-.188-.045-.292-.325-.106l-5.949 3.746-2.567-.802c-.56-.175-.574-.561.12-.85l10.037-3.864c.466-.173.875.113.721.849z"/></svg>
+        </a>
+        <a href="https://vk.com/svoirydom77" class="social-icon" aria-label="ВКонтакте" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 fill-current text-[#4c75a3]"><path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12C24 5.372 18.627 0 12 0zm4.732 17.407h-1.29c-.505 0-.66-.406-1.568-1.312-.818-.813-1.168-.83-1.363-.83-.276 0-.354.08-.354.47v1.232c0 .34-.11.53-.98.53-1.447 0-3.05-1.04-4.18-2.97-1.707-2.97-2.17-5.212-2.17-5.212 0-.232.08-.455.46-.455h1.29c.34 0 .5.154.63.53.69 2.053 1.853 4.25 2.217 4.25.17 0 .25-.08.25-.54V9.92c-.05-.46-.27-.5-.27-.66 0-.19.15-.37.46-.37h2.03c.38 0 .46.17.46.53v2.83c0 .31.13.41.22.41.17 0 .33-.1.67-.47 1.07-1.21 1.84-3.09 1.84-3.09.11-.27.27-.4.62-.4h1.29c.43 0 .52.23.43.53-.18.78-2.06 3.51-2.06 3.51-.17.27-.23.4 0 .69.17.21.74.71 1.11 1.15.7.8 1.24 1.47 1.38 1.94.11.39-.08.59-.54.59z"/></svg>
+        </a>
+        <a href="https://ok.ru/group/70000007262636" class="social-icon" aria-label="Одноклассники" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-7 h-7 fill-current text-[#ee8208]"><path d="m49.833,95.981c-25.345-.102-45.997-21.001-45.842-46.389C4.147,24.281,25.11,3.717,50.544,3.925c25.141.205,45.63,20.937,45.587,46.127-.043,25.349-20.892,46.031-46.298,45.928Zm-.013-48.066c7.632.136,14.095-6.104,14.231-13.739.136-7.628-6.103-14.079-13.749-14.216-7.624-.137-14.096,6.11-14.229,13.733-.133,7.616,6.121,14.086,13.747,14.222Zm-7.795,15.374c-2.189,1.804-3.775,3.008-5.241,4.343-2.22,2.022-4.23,4.362-1.345,7.141,2.633,2.536,4.878.682,6.811-1.377,2.47-2.631,4.891-5.308,7.899-8.58,2.718,3.068,4.605,5.398,6.707,7.513,2.143,2.156,4.399,5.635,7.815,2.392,3.442-3.267.085-5.576-2.031-7.837-1.187-1.268-2.39-2.522-3.768-3.973,2.088-1.015,3.996-1.385,4.926-2.541,1.073-1.332,2.153-3.733,1.616-4.973-.503-1.163-3.553-2.419-4.723-1.906-7.189,3.15-14.09,3.147-21.277-.006-1.163-.51-4.208.777-4.719,1.955-.533,1.228.579,3.627,1.66,4.955.936,1.15,2.835,1.519,5.671,2.894Z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ПРАВО: контакты -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Связаться с нами</h2>
+      <ul class="space-y-2 text-lg">
+        <li>Email: <a href="mailto:svoirydom77@mail.ru" class="underline hover:opacity-80">svoirydom77@mail.ru</a></li>
+        <li>Телефон: <a href="tel:+79019099191" class="underline hover:opacity-80">+7&nbsp;901&nbsp;909-91-91</a></li>
+        <li>Адрес: г. Москва, улица 2-я Пугачевская, 6</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<div id="help-modal" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50">
+      <div class="bg-white rounded-xl max-w-3xl w-full p-8 relative max-h-[90vh] overflow-y-auto">
+      <button id="close-help" class="absolute top-4 right-4 text-black text-2xl z-10">&times;</button>
+      <h2 class="text-3xl font-bold mb-6">Запросить помощь</h2>
+      <form action="https://formspree.io/f/xanlovkz" method="POST" class="space-y-4">
+        <input type="hidden" name="_subject" value="Заявка на помощь с сайта Фонда">
+        <input type="text" name="ФИО" placeholder="ФИО" required class="w-full border rounded px-4 py-2">
+        <input type="tel" name="Номер телефона" placeholder="Телефон" required class="w-full border rounded px-4 py-2">
+        <input type="email" name="email" placeholder="E-mail" class="w-full border rounded px-4 py-2">
+        <input type="text" name="Адрес" placeholder="Адрес / город" class="w-full border rounded px-4 py-2">
+              <textarea name="Описание ситуации" placeholder="Описание ситуации" required class="w-full border rounded px-4 py-2 h-24"></textarea>
+        <select name="Причина" class="w-full border rounded px-4 py-2">
+          <option>Продукты</option>
+          <option>Медикаменты</option>
+          <option>Финансовая помощь</option>
+          <option>Юридическая консультация</option>
+          <option>Психологическая помощь</option>
+        </select>
+        <label class="inline-flex items-center">
+        </label>
+        <button type="submit" class="bg-[#5A6241] text-white font-bold py-3 px-6 rounded hover:opacity-90 transition w-full">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+  <!-- ALERT MODAL -->
+<div id="alert-modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50" aria-hidden="true">
+  <div class="bg-white rounded-xl max-w-md w-full p-6 relative text-center">
+    <h3 id="alert-title" class="text-2xl font-bold mb-3">Готово</h3>
+    <p id="alert-message" class="text-lg mb-6">Сообщение успешно отправлено.</p>
+    <div class="flex gap-3 justify-center">
+      <button id="alert-ok" class="bg-[#5A6241] text-white font-bold py-2 px-5 rounded hover:opacity-90">OK</button>
+      <button id="alert-close" class="py-2 px-5 rounded border">Закрыть</button>
+    </div>
+  </div>
+</div>
+
+  <div id="donate-modal" class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50">
+      <div class="bg-white rounded-xl max-w-3xl w-full p-8 relative">
+        <button id="close-donate" class="absolute top-4 right-4 text-black text-2xl">&times;</button>
+        <h2 class="text-3xl font-bold mb-6">Поддержать бойцов</h2>
+        <form action="/donate" method="POST" class="space-y-4">
+          <input type="number" name="amount" placeholder="Сумма пожертвования (₽)" required class="w-full border rounded px-4 py-2" min="1" step="1">
+          <select name="payment_method" class="w-full border rounded px-4 py-2">
+            <option value="card">Банковская карта</option>
+            <option value="sbp">СБП / QR код</option>
+            <option value="other">Другие способы</option>
+          </select>
+          
+          <label class="inline-flex items-center">
+              <input type="checkbox" name="consent" required class="mr-2"> Я согласен на обработку персональных данных
+            </label>
+          
+          <button type="submit" class="bg-[#5A6241] text-white font-bold py-3 px-6 rounded hover:opacity-90 transition w-full">Пожертвовать</button>
+        </form>
+      </div>
+    </div>
+
+<script>
+  // Функции для управления модальными окнами
+  const helpModal = document.getElementById('help-modal');
+  const donateModal = document.getElementById('donate-modal');
+  const body = document.body;
+
+  function openModal(modal) {
+    modal.classList.remove('hidden');
+    // Отключение прокрутки на body при открытом модальном окне
+    body.style.overflow = 'hidden';
+  }
+
+  function closeModal(modal) {
+    modal.classList.add('hidden');
+    // Включение прокрутки на body
+    body.style.overflow = 'auto';
+  }
+
+  // Настройка слушателей для кнопок открытия
+  document.getElementById('open-help').addEventListener('click', () => {
+    openModal(helpModal);
+  });
+  document.getElementById('open-donate').addEventListener('click', () => {
+    openModal(donateModal);
+  });
+
+  // Настройка слушателей для кнопок закрытия
+  document.getElementById('close-help').addEventListener('click', () => {
+    closeModal(helpModal);
+  });
+  document.getElementById('close-donate').addEventListener('click', () => {
+    closeModal(donateModal);
+  });
+
+  // Закрытие при клике вне модального окна (на оверлей)
+  helpModal.addEventListener('click', (e) => {
+    if (e.target === helpModal) {
+      closeModal(helpModal);
+    }
+  });
+  donateModal.addEventListener('click', (e) => {
+    if (e.target === donateModal) {
+      closeModal(donateModal);
+    }
+  });
+  
+  // Добавление логики для мобильного меню (бургер)
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    // Toggle the 'active' class on the button for animation/state
+    mobileMenuBtn.classList.toggle('active'); 
+    // Toggle the menu visibility by changing transform property
+    if (mobileMenu.classList.contains('-translate-y-full')) {
+        mobileMenu.classList.remove('-translate-y-full');
+    } else {
+        mobileMenu.classList.add('-translate-y-full');
+    }
+  });
+
+</script>
+<script src="assets/app.js"></script>
+</body>
+</html>

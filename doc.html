@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru" style="overflow-x: hidden">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Новости — Фонд «Свои Рядом»</title>
+  <meta name="description" content="Новости фонда «Свои Рядом»: отчёты, передачи помощи, мероприятия и инициативы." />
+
+  <!-- То же, что на главной -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&subset=latin,cyrillic" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="font-oswald" style="margin:0; overflow-x:hidden">
+
+<!-- ====== HEADER (унифицированный) ====== -->
+  <header id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-[#0b0b0b]/80 backdrop-blur shadow-sm">
+    <div class="max-w-7xl mx-auto px-5 h-20 flex justify-between items-center">
+      <a href="index.html" class="flex items-center">        <img src="donesvo-white.png" alt="Фонд «Свои Рядом»" class="max-h-20 h-16">
+      </a>
+
+      <nav class="hidden lg:block">
+        <ul class="nav-list text-white font-semibold">
+          <li><a href="index.html" class="hover:opacity-80">О Фонде
+</a></li>
+          <li><a href="programs.html" class="hover:opacity-80">Активные сборы</a></li>
+          <li><a href="news.html" class="hover:opacity-80">Новости/Отчеты</a></li>
+          <li><a href="thanks.html" class="active">Благодарности</a></li> <!-- активный пункт -->
+          <li><a href="doc.html" class="hover:opacity-80">Документы</a></li>
+          <li><a href="contacts.html" class="hover:opacity-80">Контакты
+</a></li>
+        </ul>
+      </nav>
+
+
+      <!-- Контакты
+ + бургер -->
+      <div class="flex items-center gap-5">
+        <!-- ТРИ Контакты
+ (как просили): Telegram, VK, OK -->
+        <div class="social-links" style="display: flex; gap: 16px; align-items: center;">
+            <!-- Telegram -->
+            <a href="https://t.me/SVOIRYADOM77" class="social-icon" aria-label="Telegram" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-current text-[#29a9eb]">
+                    <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12C24 5.372 18.627 0 12 0zm5.833 8.24l-1.63 7.682c-.122.57-.464.706-.945.439l-2.6-1.905-1.251 1.204c-.14.135-.255.248-.363.25l.184-2.63 4.814-4.353c.209-.188-.045-.292-.325-.106l-5.949 3.746-2.567-.802c-.56-.175-.574-.561.12-.85l10.037-3.864c.466-.173.875.113.721.849z"/>
+                  </svg>
+            </a>
+          
+            <!-- VK -->
+            <a href="https://vk.com/svoirydom77" class="social-icon" aria-label="ВКонтакте" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-current text-[#4c75a3]">
+                    <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12C24 5.372 18.627 0 12 0zm4.732 17.407h-1.29c-.505 0-.66-.406-1.568-1.312-.818-.813-1.168-.83-1.363-.83-.276 0-.354.08-.354.47v1.232c0 .34-.11.53-.98.53-1.447 0-3.05-1.04-4.18-2.97-1.707-2.97-2.17-5.212-2.17-5.212 0-.232.08-.455.46-.455h1.29c.34 0 .5.154.63.53.69 2.053 1.853 4.25 2.217 4.25.17 0 .25-.08.25-.54V9.92c-.05-.46-.27-.5-.27-.66 0-.19.15-.37.46-.37h2.03c.38 0 .46.17.46.53v2.83c0 .31.13.41.22.41.17 0 .33-.1.67-.47 1.07-1.21 1.84-3.09 1.84-3.09.11-.27.27-.4.62-.4h1.29c.43 0 .52.23.43.53-.18.78-2.06 3.51-2.06 3.51-.17.27-.23.4 0 .69.17.21.74.71 1.11 1.15.7.8 1.24 1.47 1.38 1.94.11.39-.08.59-.54.59z"/>
+                  </svg>
+            </a>
+          
+            <!-- Одноклассники -->
+            <a href="https://ok.ru/group/70000007262636" class="social-icon" aria-label="Одноклассники" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-6 h-6 fill-current text-[#ee8208]">
+                    <path d="m49.833,95.981c-25.345-.102-45.997-21.001-45.842-46.389C4.147,24.281,25.11,3.717,50.544,3.925c25.141.205,45.63,20.937,45.587,46.127-.043,25.349-20.892,46.031-46.298,45.928Zm-.013-48.066c7.632.136,14.095-6.104,14.231-13.739.136-7.628-6.103-14.079-13.749-14.216-7.624-.137-14.096,6.11-14.229,13.733-.133,7.616,6.121,14.086,13.747,14.222Zm-7.795,15.374c-2.189,1.804-3.775,3.008-5.241,4.343-2.22,2.022-4.23,4.362-1.345,7.141,2.633,2.536,4.878.682,6.811-1.377,2.47-2.631,4.891-5.308,7.899-8.58,2.718,3.068,4.605,5.398,6.707,7.513,2.143,2.156,4.399,5.635,7.815,2.392,3.442-3.267.085-5.576-2.031-7.837-1.187-1.268-2.39-2.522-3.768-3.973,2.088-1.015,3.996-1.385,4.926-2.541,1.073-1.332,2.153-3.733,1.616-4.973-.503-1.163-3.553-2.419-4.723-1.906-7.189,3.15-14.09,3.147-21.277-.006-1.163-.51-4.208.777-4.719,1.955-.533,1.228.579,3.627,1.66,4.955.936,1.15,2.835,1.519,5.671,2.894Z"/>
+                  </svg>
+            </a>
+          </div>
+
+        <!-- Бургер -->
+        <button id="mobile-menu-btn" class="lg:hidden t-menuburger z-50">
+          <span class="bg-white"></span>
+          <span class="bg-white"></span>
+          <span class="bg-white"></span>
+          <span class="bg-white"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Мобильное меню -->
+<nav id="mobile-menu" class="fixed top-0 left-0 w-full h-screen bg-[#ff7c3b] transform -translate-y-full transition-transform duration-300 lg:hidden z-40" aria-label="Мобильная навигация">
+  <div class="pt-24 px-5 space-y-4 text-white text-2xl">
+    <a href="index.html" class="block py-2 hover:bg-white/10 rounded">О Фонде</a>
+    <a href="programs.html" class="block py-2 hover:bg-white/10 rounded">Активные сборы</a>
+    <a href="news.html" class="block py-2 hover:bg-white/10 rounded">Новости/Отчёты</a>
+<a href="thanks.html" class="hover:opacity-80">Благодарности</a>
+
+    <a href="doc.html" class="block py-2 hover:bg-white/10 rounded">Документы</a>
+    <a href="contacts.html" class="block py-2 hover:bg-white/10 rounded">Контакты</a>
+  </div>
+</nav>
+
+  </header>
+
+  <main class="pt-24">
+
+<!DOCTYPE html>
+<html lang="ru" style="overflow-x:hidden">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Документы — Фонд «Свои Рядом»</title>
+  <meta name="description" content="Основные документы фонда: реквизиты, устав, политика обработки персональных данных и другие.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-white text-gray-900">
+  <main class="px-5 py-10">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-10 tracking-tight">Документы</h1>
+
+      <div id="docs-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 1. Карточка Фонда -->
+        <a href="docs/Карточка-Фонда.pdf" target="_blank"
+           class="block bg-[#f8f8f8] rounded-xl p-6 shadow-sm hover:shadow-md transition">
+          <h3 class="font-bold text-lg">Реквизиты Фонда</h3>
+        </a>
+
+        <!-- 2. Положение о гуманитарной акции -->
+        <a href="docs/05_Положение_о_Гуманитарной_акции.pdf" target="_blank"
+           class="block bg-[#f8f8f8] rounded-xl p-6 shadow-sm hover:shadow-md transition">
+          <h3 class="font-bold text-lg">Положение о гуманитарной акции</h3>
+        </a>
+
+        <!-- 3. Устав Фонда -->
+        <a href="docs/Устав .pdf" target="_blank"
+           class="block bg-[#f8f8f8] rounded-xl p-6 shadow-sm hover:shadow-md transition">
+          <h3 class="font-bold text-lg">Устав Фонда</h3>
+        </a>
+
+        <!-- 4. Публичная оферта -->
+        <a href="docs/13-Публичная-оферта.pdf" target="_blank"
+           class="block bg-[#f8f8f8] rounded-xl p-6 shadow-sm hover:shadow-md transition">
+          <h3 class="font-bold text-lg">Публичная оферта</h3>
+        </a>
+
+        <!-- 5. Политика обработки ПД -->
+        <a href="docs/09_Политика_обработки_персональных_данных.pdf" target="_blank"
+           class="block bg-[#f8f8f8] rounded-xl p-6 shadow-sm hover:shadow-md transition">
+          <h3 class="font-bold text-lg">Политика обработки персональных данных</h3>
+        </a>
+
+        <!-- 6. Свидетельство о постановке на учет -->
+        <a href="docs/Свидетельство_о_постановке_на_налоговый_учет_.pdf" target="_blank"
+           class="block bg-[#f8f8f8] rounded-xl p-6 shadow-sm hover:shadow-md transition">
+          <h3 class="font-bold text-lg">Свидетельство о постановке на учет в налоговом органе</h3>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
+
+
+
+  </main>
+
+<section class="brand-donate py-24 px-5">
+  <div class="max-w-7xl mx-auto space-y-8">
+      <h2 class="text-3xl font-bold">Реквизиты для пожертвования:</h2>
+
+      <ul class="donate-list space-y-2">
+          <li>Полное наименование: ФОНД ПОДДЕРЖКИ ПОСТРАДАВШИХ В РЕЗУЛЬТАТЕ ВОЕННЫХ ДЕЙСТВИЙ «СВОИ РЯДОМ»</li>
+          <li>ИНН: 9718273681</li>
+          <li>Номер счёта: 40703810902720000178</li>
+          <li>Банк: АО «АЛЬФА-БАНК»</li>
+          <li>ИНН банка: 7728168971</li>
+          <li>КПП: 771801001</li>
+          <li>БИК: 044525593</li>
+          <li>Корр. счёт: 30101810200000000593</li>
+          <li>Назначение платежа: «Пожертвование»</li>
+      </ul>
+
+      <h2 class="text-xl font-bold pt-4">Для переводов по СБП:</h2>
+      <a href="https://qr.nspk.ru/BS2A005U37QQC7BP8CP91TUEHIHUBQM6?type=01&bank=100000000008&crc=E4F9" class="underline break-words">
+        https://qr.nspk.ru/BS2A005U37QQC7BP8CP91TUEHIHUBQM6?type=01&bank=100000000008&crc=E4F9
+      </a>
+
+      <img src="qr.jpg" alt="QR для перевода по СБП" class="max-w-[320px] max-h-[320px] pt-4">
+  </div>
+</section>
+
+<footer class="bg-[#5A6241] text-white py-16 px-5">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+    <!-- ЛЕВО: соцсети (без ДЗЕН) -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Наши социальные сети</h2>
+      <div class="flex gap-5 items-center">
+        <a href="https://t.me/SVOIRYADOM77" class="social-icon" aria-label="Telegram" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 fill-current text-[#29a9eb]"><path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12C24 5.372 18.627 0 12 0zm5.833 8.24l-1.63 7.682c-.122.57-.464.706-.945.439l-2.6-1.905-1.251 1.204c-.14.135-.255.248-.363.25l.184-2.63 4.814-4.353c.209-.188-.045-.292-.325-.106l-5.949 3.746-2.567-.802c-.56-.175-.574-.561.12-.85l10.037-3.864c.466-.173.875.113.721.849z"/></svg>
+        </a>
+        <a href="https://vk.com/svoirydom77" class="social-icon" aria-label="ВКонтакте" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 fill-current text-[#4c75a3]"><path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12C24 5.372 18.627 0 12 0zm4.732 17.407h-1.29c-.505 0-.66-.406-1.568-1.312-.818-.813-1.168-.83-1.363-.83-.276 0-.354.08-.354.47v1.232c0 .34-.11.53-.98.53-1.447 0-3.05-1.04-4.18-2.97-1.707-2.97-2.17-5.212-2.17-5.212 0-.232.08-.455.46-.455h1.29c.34 0 .5.154.63.53.69 2.053 1.853 4.25 2.217 4.25.17 0 .25-.08.25-.54V9.92c-.05-.46-.27-.5-.27-.66 0-.19.15-.37.46-.37h2.03c.38 0 .46.17.46.53v2.83c0 .31.13.41.22.41.17 0 .33-.1.67-.47 1.07-1.21 1.84-3.09 1.84-3.09.11-.27.27-.4.62-.4h1.29c.43 0 .52.23.43.53-.18.78-2.06 3.51-2.06 3.51-.17.27-.23.4 0 .69.17.21.74.71 1.11 1.15.7.8 1.24 1.47 1.38 1.94.11.39-.08.59-.54.59z"/></svg>
+        </a>
+        <a href="https://ok.ru/group/70000007262636" class="social-icon" aria-label="Одноклассники" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-7 h-7 fill-current text-[#ee8208]"><path d="m49.833,95.981c-25.345-.102-45.997-21.001-45.842-46.389C4.147,24.281,25.11,3.717,50.544,3.925c25.141.205,45.63,20.937,45.587,46.127-.043,25.349-20.892,46.031-46.298,45.928Zm-.013-48.066c7.632.136,14.095-6.104,14.231-13.739.136-7.628-6.103-14.079-13.749-14.216-7.624-.137-14.096,6.11-14.229,13.733-.133,7.616,6.121,14.086,13.747,14.222Zm-7.795,15.374c-2.189,1.804-3.775,3.008-5.241,4.343-2.22,2.022-4.23,4.362-1.345,7.141,2.633,2.536,4.878.682,6.811-1.377,2.47-2.631,4.891-5.308,7.899-8.58,2.718,3.068,4.605,5.398,6.707,7.513,2.143,2.156,4.399,5.635,7.815,2.392,3.442-3.267.085-5.576-2.031-7.837-1.187-1.268-2.39-2.522-3.768-3.973,2.088-1.015,3.996-1.385,4.926-2.541,1.073-1.332,2.153-3.733,1.616-4.973-.503-1.163-3.553-2.419-4.723-1.906-7.189,3.15-14.09,3.147-21.277-.006-1.163-.51-4.208.777-4.719,1.955-.533,1.228.579,3.627,1.66,4.955.936,1.15,2.835,1.519,5.671,2.894Z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ПРАВО: контакты -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Связаться с нами</h2>
+      <ul class="space-y-2 text-lg">
+        <li>Email: <a href="mailto:svoirydom77@mail.ru" class="underline hover:opacity-80">svoirydom77@mail.ru</a></li>
+        <li>Телефон: <a href="tel:+79019099191" class="underline hover:opacity-80">+7&nbsp;901&nbsp;909-91-91</a></li>
+        <li>Адрес: г. Москва, улица 2-я Пугачевская, 6</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Скрипты (нужен для мобильного меню и see-more) -->
+  <script src="assets/app.js"></script>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

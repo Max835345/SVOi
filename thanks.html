@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru" style="overflow-x: hidden">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Благодарности — Фонд «Свои Рядом»</title>
+  <meta name="description" content="Хронология благодарностей и грамот от подразделений, организаций и партнёров." />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Наш CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- ВАЖНО: порядок подключений как на остальных страницах -->
+</head>
+<body class="font-oswald text-black bg-white" style="margin:0; overflow-x:hidden">
+
+<!-- ====== HEADER (унифицированный) ====== -->
+  <header id="main-nav" class="fixed top-0 left-0 w-full z-50 bg-[#0b0b0b]/80 backdrop-blur shadow-sm">
+    <div class="max-w-7xl mx-auto px-5 h-20 flex justify-between items-center">
+      <a href="index.html" class="flex items-center">        <img src="donesvo-white.png" alt="Фонд «Свои Рядом»" class="max-h-20 h-16">
+      </a>
+
+      <nav class="hidden lg:block">
+        <ul class="nav-list text-white font-semibold">
+          <li><a href="index.html" class="hover:opacity-80">О Фонде
+</a></li>
+          <li><a href="programs.html" class="hover:opacity-80">Активные сборы</a></li>
+          <li><a href="news.html" class="hover:opacity-80">Новости/Отчеты</a></li>
+          <li><a href="thanks.html" class="active">Благодарности</a></li> <!-- активный пункт -->
+          <li><a href="doc.html" class="hover:opacity-80">Документы</a></li>
+          <li><a href="contacts.html" class="hover:opacity-80">Контакты
+</a></li>
+        </ul>
+      </nav>
+
+      <!-- Контакты
+ + бургер -->
+      <div class="flex items-center gap-5">
+        <!-- ТРИ Контакты
+ (как просили): Telegram, VK, OK -->
+        <div class="social-links" style="display: flex; gap: 16px; align-items: center;">
+            <!-- Telegram -->
+            <a href="https://t.me/SVOIRYADOM77" class="social-icon" aria-label="Telegram" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-current text-[#29a9eb]">
+                    <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12C24 5.372 18.627 0 12 0zm5.833 8.24l-1.63 7.682c-.122.57-.464.706-.945.439l-2.6-1.905-1.251 1.204c-.14.135-.255.248-.363.25l.184-2.63 4.814-4.353c.209-.188-.045-.292-.325-.106l-5.949 3.746-2.567-.802c-.56-.175-.574-.561.12-.85l10.037-3.864c.466-.173.875.113.721.849z"/>
+                  </svg>
+            </a>
+          
+            <!-- VK -->
+            <a href="https://vk.com/svoirydom77" class="social-icon" aria-label="ВКонтакте" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-current text-[#4c75a3]">
+                    <path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12C24 5.372 18.627 0 12 0zm4.732 17.407h-1.29c-.505 0-.66-.406-1.568-1.312-.818-.813-1.168-.83-1.363-.83-.276 0-.354.08-.354.47v1.232c0 .34-.11.53-.98.53-1.447 0-3.05-1.04-4.18-2.97-1.707-2.97-2.17-5.212-2.17-5.212 0-.232.08-.455.46-.455h1.29c.34 0 .5.154.63.53.69 2.053 1.853 4.25 2.217 4.25.17 0 .25-.08.25-.54V9.92c-.05-.46-.27-.5-.27-.66 0-.19.15-.37.46-.37h2.03c.38 0 .46.17.46.53v2.83c0 .31.13.41.22.41.17 0 .33-.1.67-.47 1.07-1.21 1.84-3.09 1.84-3.09.11-.27.27-.4.62-.4h1.29c.43 0 .52.23.43.53-.18.78-2.06 3.51-2.06 3.51-.17.27-.23.4 0 .69.17.21.74.71 1.11 1.15.7.8 1.24 1.47 1.38 1.94.11.39-.08.59-.54.59z"/>
+                  </svg>
+            </a>
+          
+            <!-- Одноклассники -->
+            <a href="https://ok.ru/group/70000007262636" class="social-icon" aria-label="Одноклассники" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-6 h-6 fill-current text-[#ee8208]">
+                    <path d="m49.833,95.981c-25.345-.102-45.997-21.001-45.842-46.389C4.147,24.281,25.11,3.717,50.544,3.925c25.141.205,45.63,20.937,45.587,46.127-.043,25.349-20.892,46.031-46.298,45.928Zm-.013-48.066c7.632.136,14.095-6.104,14.231-13.739.136-7.628-6.103-14.079-13.749-14.216-7.624-.137-14.096,6.11-14.229,13.733-.133,7.616,6.121,14.086,13.747,14.222Zm-7.795,15.374c-2.189,1.804-3.775,3.008-5.241,4.343-2.22,2.022-4.23,4.362-1.345,7.141,2.633,2.536,4.878.682,6.811-1.377,2.47-2.631,4.891-5.308,7.899-8.58,2.718,3.068,4.605,5.398,6.707,7.513,2.143,2.156,4.399,5.635,7.815,2.392,3.442-3.267.085-5.576-2.031-7.837-1.187-1.268-2.39-2.522-3.768-3.973,2.088-1.015,3.996-1.385,4.926-2.541,1.073-1.332,2.153-3.733,1.616-4.973-.503-1.163-3.553-2.419-4.723-1.906-7.189,3.15-14.09,3.147-21.277-.006-1.163-.51-4.208.777-4.719,1.955-.533,1.228.579,3.627,1.66,4.955.936,1.15,2.835,1.519,5.671,2.894Z"/>
+                  </svg>
+            </a>
+          </div>
+
+        <button id="mobile-menu-btn" class="lg:hidden t-menuburger z-50" aria-label="Открыть меню">
+          <span class="bg-white"></span>
+          <span class="bg-white"></span>
+          <span class="bg-white"></span>
+          <span class="bg-white"></span>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-menu" class="fixed top-0 left-0 w-full h-screen bg-[#ff7c3b] transform -translate-y-full transition-transform duration-300 lg:hidden z-40">
+      <div class="pt-24 px-5 space-y-4">
+        <a href="index.html" class="block text-white text-2xl py-2 hover:bg-white/10">О Фонде
+</a>
+        <a href="programs.html" class="block text-white text-2xl py-2 hover:bg-white/10">Активные сборы</a>
+        <a href="news.html" class="block text-white text-2xl py-2 hover:bg-white/10">Новости/Отчеты</a>
+        <a href="thanks.html" class="block text-white text-2xl py-2 hover:bg-white/10">Благодарности</a>
+        <a href="doc.html" class="block text-white text-2xl py-2 hover:bg-white/10">Документы</a>
+        <a href="contacts.html" class="block text-white text-2xl py-2 hover:bg-white/10">Контакты
+</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-24">
+    <!-- Заголовок страницы -->
+    <section class="px-5 py-10">
+      <div class="max-w-7xl mx-auto text-center mb-5">
+        <h1 class="text-4xl lg:text-5xl font-bold mb-5">Благодарности</h1>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+        </p>
+      </div>
+    </section>
+
+<!-- Лента благодарностей (аналог news) -->
+<section class="px-5 py-10 bg-[var(--c-sand)] border-t border-[var(--c-olive2)]">
+  <div class="max-w-7xl mx-auto">
+    <!-- СЕТКА: по умолчанию показываем 6, остальные скрыты -->
+    <div id="thanks-grid"
+     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 al-see-more al-collapsed">
+
+         <!-- 1 -->
+      <article class="news-item">
+        <!-- Положи сюда JPG: images/thanks/blagodarnost-10-otdelnyi-tankovyi-batalon.jpg -->
+        <a href="images/thanks/blagodarnost-10-otdelnyi-tankovyi-batalon.jpg" target="_blank" rel="noopener">
+          <img class="ln-img" src="images/thanks/blagodarnost-10-otdelnyi-tankovyi-batalon.jpg" alt="Благодарность от 10 отдельного танкового батальона">
+        </a>
+        <div class="ln-body">
+          <h3 class="ln-title">Благодарность от 10 отдельного танкового батальона</h3>
+          <a class="ln-link" href="docs/Благодарность_от_10_отдельного_танкового_батальона.pdf" target="_blank" rel="noopener">Открыть PDF</a>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="news-item">
+        <!-- JPG: images/thanks/blagodarnost-vch-45312.jpg -->
+        <a href="images/thanks/blagodarnost-vch-45312.jpg" target="_blank" rel="noopener">
+          <img class="ln-img" src="images/thanks/blagodarnost-vch-45312.jpg" alt="Благодарность от войсковой части 45312">
+        </a>
+        <div class="ln-body">
+          <h3 class="ln-title">Благодарность от войсковой части 45312</h3>
+          <a class="ln-link" href="docs/Благодарность_от_ВРИО_командира_войсковой_части_45312.pdf" target="_blank" rel="noopener">Открыть PDF</a>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="news-item">
+        <!-- JPG: images/thanks/blagodarnost-vch-52562-motostrelkovyi-batalon.jpg -->
+        <a href="images/thanks/blagodarnost-vch-52562-motostrelkovyi-batalon.jpg" target="_blank" rel="noopener">
+          <img class="ln-img" src="images/thanks/blagodarnost-vch-52562-motostrelkovyi-batalon.jpg" alt="Благодарность от мотострелкового батальона войсковой части 52562">
+        </a>
+        <div class="ln-body">
+          <h3 class="ln-title">Благодарность от мотострелкового батальона войсковой части 52562</h3>
+          <a class="ln-link" href="docs/Благодарность_от_мотострелкового_батальона_вч_52562.pdf" target="_blank" rel="noopener">Открыть PDF</a>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="news-item">
+        <!-- JPG: images/thanks/blagodarnost-vch-34482-2-strelkovyi-batalon.jpg -->
+        <a href="images/thanks/blagodarnost-vch-34482-2-strelkovyi-batalon.jpg" target="_blank" rel="noopener">
+          <img class="ln-img" src="images/thanks/blagodarnost-vch-34482-2-strelkovyi-batalon.jpg" alt="Благодарность от 2 стрелкового батальона войсковой части 34482">
+        </a>
+        <div class="ln-body">
+          <h3 class="ln-title">Благодарность от 2 стрелкового батальона войсковой части 34482</h3>
+          <a class="ln-link" href="docs/Благодарность_от_2_стрелкового_батальона_вч_34482.pdf" target="_blank" rel="noopener">Открыть PDF</a>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="news-item">
+        <!-- JPG: images/thanks/blagodarnost-vch-44225-10-gv-tank-batalon.jpg -->
+        <a href="images/thanks/blagodarnost-vch-44225-10-gv-tank-batalon.jpg" target="_blank" rel="noopener">
+          <img class="ln-img" src="images/thanks/blagodarnost-vch-44225-10-gv-tank-batalon.jpg" alt="Благодарность от 10 отдельного гвардейского танкового батальона войсковой части 44225">
+        </a>
+        <div class="ln-body">
+          <h3 class="ln-title">Благодарность от 10 отдельного гвардейского танкового батальона войсковой части 44225</h3>
+          <a class="ln-link" href="docs/Благодарность_от_10_отдельного_гвардейского_танкового_батальона_вч_44225.pdf" target="_blank" rel="noopener">Открыть PDF</a>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="news-item">
+        <!-- JPG: images/thanks/blagodarnost-vch-41680-shturmovyi-otryad.jpg -->
+        <a href="images/thanks/blagodarnost-vch-41680-shturmovyi-otryad.jpg" target="_blank" rel="noopener">
+          <img class="ln-img" src="images/thanks/blagodarnost-vch-41680-shturmovyi-otryad.jpg" alt="Благодарность от штурмового отряда войсковой части 41680 гвардии">
+        </a>
+        <div class="ln-body">
+          <h3 class="ln-title">Благодарность от штурмового отряда войсковой части 41680 гвардии</h3>
+          <a class="ln-link" href="docs/Благодарность_от_штурмового_отряда_вч_41680_гвардии.pdf" target="_blank" rel="noopener">Открыть PDF</a>
+        </div>
+      </article>
+
+      <!-- 7 -->
+      <article class="news-item">
+        <!-- JPG: images/thanks/blagodarnost-vch-34479-otdelnyi-strelkovyi-polk.jpg -->
+        <a href="images/thanks/blagodarnost-vch-34479-otdelnyi-strelkovyi-polk.jpg" target="_blank" rel="noopener">
+          <img class="ln-img" src="images/thanks/blagodarnost-vch-34479-otdelnyi-strelkovyi-polk.jpg" alt="Благодарность от отдельного стрелкового полка войсковой части 34479">
+        </a>
+        <div class="ln-body">
+          <h3 class="ln-title">Благодарность от отдельного стрелкового полка войсковой части 34479</h3>
+          <a class="ln-link" href="docs/Благодарность_от_отдельного_стрелкового_полка_вч_34479.pdf" target="_blank" rel="noopener">Открыть PDF</a>
+        </div>
+      </article>
+
+      <!-- 8 -->
+      <article class="news-item">
+        <!-- JPG: images/thanks/blagodarnost-batalon-somali.jpg -->
+        <a href="images/thanks/blagodarnost-batalon-somali.jpg" target="_blank" rel="noopener">
+          <img class="ln-img" src="images/thanks/blagodarnost-batalon-somali.jpg" alt="Благодарность от отдельного гвардейского штурмового батальона «Сомали»">
+        </a>
+        <div class="ln-body">
+          <h3 class="ln-title">Благодарность от отдельного гвардейского штурмового батальона «Сомали»</h3>
+          <a class="ln-link" href="docs/Благодарность_от_отдельного_гвардейского_штурмового_батальона_Сомали.pdf" target="_blank" rel="noopener">Открыть PDF</a>
+        </div>
+      </article>
+      
+    </div>
+    <div class="text-center mt-10">
+  <button id="see-more-thanks"
+          class="al-see-more-btn inline-block rounded-full border-2 border-[#5A6241] text-[#5A6241] font-bold px-6 py-3 hover:bg-[#5A6241] hover:text-white transition"
+          data-see-more-target="#thanks-grid"
+          aria-controls="thanks-grid"
+          aria-expanded="false">
+    Показать ещё
+  </button>
+</div>
+
+</section>
+
+
+  <!-- Реквизиты/футер как на остальных страницах (можете скопировать ваш блок полностью) -->
+<section class="brand-donate py-24 px-5">
+  <div class="max-w-7xl mx-auto space-y-8">
+      <h2 class="text-3xl font-bold">Реквизиты для пожертвования:</h2>
+
+      <ul class="donate-list space-y-2">
+          <li>Полное наименование: ФОНД ПОДДЕРЖКИ ПОСТРАДАВШИХ В РЕЗУЛЬТАТЕ ВОЕННЫХ ДЕЙСТВИЙ «СВОИ РЯДОМ»</li>
+          <li>ИНН: 9718273681</li>
+          <li>Номер счёта: 40703810902720000178</li>
+          <li>Банк: АО «АЛЬФА-БАНК»</li>
+          <li>ИНН банка: 7728168971</li>
+          <li>КПП: 771801001</li>
+          <li>БИК: 044525593</li>
+          <li>Корр. счёт: 30101810200000000593</li>
+          <li>Назначение платежа: «Пожертвование»</li>
+      </ul>
+
+      <h2 class="text-xl font-bold pt-4">Для переводов по СБП:</h2>
+      <a href="https://qr.nspk.ru/BS2A005U37QQC7BP8CP91TUEHIHUBQM6?type=01&bank=100000000008&crc=E4F9" class="underline break-words">
+        https://qr.nspk.ru/BS2A005U37QQC7BP8CP91TUEHIHUBQM6?type=01&bank=100000000008&crc=E4F9
+      </a>
+
+      <img src="qr.jpg" alt="QR для перевода по СБП" class="max-w-[320px] max-h-[320px] pt-4">
+  </div>
+</section>
+
+<footer class="bg-[#5A6241] text-white py-16 px-5">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+    <!-- ЛЕВО: соцсети (без ДЗЕН) -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Наши социальные сети</h2>
+      <div class="flex gap-5 items-center">
+        <a href="https://t.me/SVOIRYADOM77" class="social-icon" aria-label="Telegram" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 fill-current text-[#29a9eb]"><path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12C24 5.372 18.627 0 12 0zm5.833 8.24l-1.63 7.682c-.122.57-.464.706-.945.439l-2.6-1.905-1.251 1.204c-.14.135-.255.248-.363.25l.184-2.63 4.814-4.353c.209-.188-.045-.292-.325-.106l-5.949 3.746-2.567-.802c-.56-.175-.574-.561.12-.85l10.037-3.864c.466-.173.875.113.721.849z"/></svg>
+        </a>
+        <a href="https://vk.com/svoirydom77" class="social-icon" aria-label="ВКонтакте" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 fill-current text-[#4c75a3]"><path d="M12 0C5.372 0 0 5.372 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12C24 5.372 18.627 0 12 0zm4.732 17.407h-1.29c-.505 0-.66-.406-1.568-1.312-.818-.813-1.168-.83-1.363-.83-.276 0-.354.08-.354.47v1.232c0 .34-.11.53-.98.53-1.447 0-3.05-1.04-4.18-2.97-1.707-2.97-2.17-5.212-2.17-5.212 0-.232.08-.455.46-.455h1.29c.34 0 .5.154.63.53.69 2.053 1.853 4.25 2.217 4.25.17 0 .25-.08.25-.54V9.92c-.05-.46-.27-.5-.27-.66 0-.19.15-.37.46-.37h2.03c.38 0 .46.17.46.53v2.83c0 .31.13.41.22.41.17 0 .33-.1.67-.47 1.07-1.21 1.84-3.09 1.84-3.09.11-.27.27-.4.62-.4h1.29c.43 0 .52.23.43.53-.18.78-2.06 3.51-2.06 3.51-.17.27-.23.4 0 .69.17.21.74.71 1.11 1.15.7.8 1.24 1.47 1.38 1.94.11.39-.08.59-.54.59z"/></svg>
+        </a>
+        <a href="https://ok.ru/group/70000007262636" class="social-icon" aria-label="Одноклассники" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-7 h-7 fill-current text-[#ee8208]"><path d="m49.833,95.981c-25.345-.102-45.997-21.001-45.842-46.389C4.147,24.281,25.11,3.717,50.544,3.925c25.141.205,45.63,20.937,45.587,46.127-.043,25.349-20.892,46.031-46.298,45.928Zm-.013-48.066c7.632.136,14.095-6.104,14.231-13.739.136-7.628-6.103-14.079-13.749-14.216-7.624-.137-14.096,6.11-14.229,13.733-.133,7.616,6.121,14.086,13.747,14.222Zm-7.795,15.374c-2.189,1.804-3.775,3.008-5.241,4.343-2.22,2.022-4.23,4.362-1.345,7.141,2.633,2.536,4.878.682,6.811-1.377,2.47-2.631,4.891-5.308,7.899-8.58,2.718,3.068,4.605,5.398,6.707,7.513,2.143,2.156,4.399,5.635,7.815,2.392,3.442-3.267.085-5.576-2.031-7.837-1.187-1.268-2.39-2.522-3.768-3.973,2.088-1.015,3.996-1.385,4.926-2.541,1.073-1.332,2.153-3.733,1.616-4.973-.503-1.163-3.553-2.419-4.723-1.906-7.189,3.15-14.09,3.147-21.277-.006-1.163-.51-4.208.777-4.719,1.955-.533,1.228.579,3.627,1.66,4.955.936,1.15,2.835,1.519,5.671,2.894Z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- ПРАВО: контакты -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Связаться с нами</h2>
+      <ul class="space-y-2 text-lg">
+        <li>Email: <a href="mailto:svoirydom77@mail.ru" class="underline hover:opacity-80">svoirydom77@mail.ru</a></li>
+        <li>Телефон: <a href="tel:+79019099191" class="underline hover:opacity-80">+7&nbsp;901&nbsp;909-91-91</a></li>
+        <li>Адрес: г. Москва, улица 2-я Пугачевская, 6</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  <!-- Общий JS -->
+  <script src="assets/app.js"></script>
+</body>
+</html>
